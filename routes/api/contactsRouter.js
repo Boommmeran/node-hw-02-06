@@ -14,17 +14,17 @@ const { getContacts, getById, updateById, add, deleteContact } =
 
 contactsRouter.get('/', getContacts);
 
-contactsRouter.get('/:contactId', getById);
+// contactsRouter.get('/:contactId', getById);
 
-contactsRouter.post('/', isEmptyBody, validateBody(contactsAddShema), add);
+// contactsRouter.post('/', isEmptyBody, validateBody(contactsAddShema), add);
 
-contactsRouter.delete('/:contactId', deleteContact);
+// contactsRouter.delete('/:contactId', deleteContact);
 
-contactsRouter.put(
-  '/:contactId',
-  isEmptyBody,
-  validateBody(contactsUpdateShema),
-  updateById
-);
+// contactsRouter.put(
+//   '/:contactId',
+//   isEmptyBody,
+//   validateBody(contactsUpdateShema),
+//   updateById
+// );
 
 export default contactsRouter;
