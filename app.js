@@ -1,10 +1,9 @@
 import express from 'express';
 import logger from 'morgan';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import contactsRouter from './routes/api/contactsRouter.js';
-
-dotenv.config();
+import userRouter from './routes/userRouter.js';
 
 const app = express();
 
@@ -16,6 +15,7 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use('/users', userRouter);
 app.use('/api/contacts', contactsRouter);
 
 app.use((_, res) => {
